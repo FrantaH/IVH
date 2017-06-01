@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project fitkitversion="1.0" outputprefix="lightsout">
+    <!--  Project description -->
+    <name>lightsout</name>
+    <author>Frantisek Horazny</author>
+    <authoremail>xhoraz02@fit.vutbr.cz</authoremail>
+    <description>Jednoduchá hra lightsout na VGA výstup. Je napsaná pouze v FPGA, bez použití MCU</description>
+
+    <!--  MCU part --> 
+    <mcu>
+        <file>main.c</file>
+    </mcu>
+
+    <!-- FPGA part -->
+    <fpga architecture="pc">
+        <include>fpga/ctrls/spi/package.xml</include>
+        <include>fpga/ctrls/vga/package.xml</include>
+        <include>fpga/ctrls/lcd/package.xml</include>
+        <include>fpga/ctrls/keyboard/package.xml</include>
+
+        <file>lightsout_top.vhd</file>
+        <file>cell.vhd</file>
+        <file>bcd.vhd</file>
+        <file>lightsout_pack.vhd</file>
+    </fpga>
+</project>
